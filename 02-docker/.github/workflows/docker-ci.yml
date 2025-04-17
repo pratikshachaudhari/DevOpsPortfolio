@@ -2,8 +2,6 @@ name: Docker CI - Flask App
 
 on:
   push:
-    paths:
-      - '02-docker/**'
     branches:
       - main
 
