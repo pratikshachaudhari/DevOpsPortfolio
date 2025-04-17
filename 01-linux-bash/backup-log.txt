@@ -1,0 +1,3 @@
+[20250415_131043] Starting backup of /workspaces/DevOpsPortfolio/DevOpsPortfolio/test-folder...
+tar: Removing leading `/' from member names
+[20250415_131043] Backup successful: /workspaces/DevOpsPortfolio/DevOpsPortfolio/backup-folder/backup_20250415_131043.tar.gz
