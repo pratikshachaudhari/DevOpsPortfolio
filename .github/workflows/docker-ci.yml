@@ -16,6 +16,11 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-buildx-action@v2
 
+    - name: Debug: Check secrets exist (do not print values)
+      run: |
+        echo "Username set? -> ${{ secrets.DOCKER_USERNAME != '' }}"
+        echo "Password set? -> ${{ secrets.DOCKER_PASSWORD != '' }}"
+    
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
