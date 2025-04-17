@@ -17,11 +17,18 @@ jobs:
         uses: docker/setup-buildx-action@v2
         
       - name: Check secrets exist (safe check)
-        run:  |
+        run: |
           echo "Checking secrets..."
-          if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then echo "DOCKER_USERNAME is not set"; exit 1; fi
-          if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then echo "DOCKER_PASSWORD is not set"; exit 1; fi
-          echo "All required secrets are set"
+          if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then
+            echo "DOCKER_USERNAME is not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then
+            echo "DOCKER_PASSWORD is not set"
+            exit 1
+          fi
+          echo "All required secrets are set ✅"
+      
 
       - name: Log in to Docker Hub
         env:
